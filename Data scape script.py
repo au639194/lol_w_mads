@@ -51,7 +51,6 @@ for url in urls:
         print(f"Failed to scrape {url}, status code {response.status_code}")
     time.sleep(1)
 
-#Github test push
 #Save the scraped text to a file
 with open('corpus.txt', 'w') as f:
     for text in texts:
