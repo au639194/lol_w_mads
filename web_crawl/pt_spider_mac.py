@@ -13,11 +13,6 @@ class PsychologyTodaySpider(scrapy.Spider):
     allowed_domains = ['psychologytoday.com']
     start_urls = ['https://www.psychologytoday.com/intl/blog/balanced/202304/air-pollution-and-depression']
 
-    custom_settings = {
-        'FEED_URI': 'file:///D:/lol_w_mads/web_crawl/psych_art.csv',
-        'FEED_FORMAT': 'csv'
-    }
-
     def parse(self, response):
         title = response.css('#block-pt-content > article > div.blog-entry--header > div.blog-entry--header-second > h1::text').get()
         author = response.css('#block-pt-content > article > div.blog-entry--header > div.blog-entry--header-first > div > div.profile-card__profile-copy > div.h3.profile-card__profile-name > a::text').get()
